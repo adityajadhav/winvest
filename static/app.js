@@ -1,14 +1,16 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-var myApp = angular.module('myApp', [ 'ngRoute' ]);
+var myApp = angular.module('different', [ 'ui.router' ]);
 
-myApp.config(function($routeProvider) {
-	$routeProvider.when('/', {
-		templateUrl : './home.html',
+myApp.config(function($stateProvider, $locationProvider) {
+	$stateProvider.state({
+		name : 'home',
+		url : '/',
+		templateUrl : 'home.html',
 		controller : 'HomeCtrl'
 	});
-	console.log("Here");
+	$locationProvider.html5Mode(true);
 });
 
 /*
