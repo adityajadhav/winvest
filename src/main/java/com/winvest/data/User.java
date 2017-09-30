@@ -15,6 +15,16 @@ public class User {
 	private String name;
 
 	private String address;
+	
+	private double amount;
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
 
 	private List<Item> wishlist;
 
