@@ -1,8 +1,7 @@
 spring:
     data:
         mongodb:
-            uri: mongodb://tiger:PASSWORD@neo-shard-00-00-2dng6.mongodb.net:27017,neo-shard-00-01-2dng6.mongodb.net:27017,neo-shard-00-02-2dng6.mongodb.net:27017/test?ssl=true&replicaSet=neo-shard-0&authSource=admin
-    
+            uri: mongodb://tiger:tiger@neo-shard-00-00-2dng6.mongodb.net:27017,neo-shard-00-01-2dng6.mongodb.net:27017,neo-shard-00-02-2dng6.mongodb.net:27017/winvest?ssl=true&replicaSet=neo-shard-0&authSource=admin
 server:
   port: 8080
   
