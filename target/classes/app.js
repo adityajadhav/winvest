@@ -1,24 +1,24 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute'
-]).
+var myApp = angular.module('myApp', [ 'ngRoute' ]);
 
-config(['$locationProvider', '$routeProvider', "$httpProvider", function($locationProvider, $routeProvider, $httpProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
-}])
+myApp.config(function($routeProvider) {
+	$routeProvider.when('/', {
+		templateUrl : './home.html',
+		controller : 'HomeCtrl'
+	});
+	console.log("Here");
+});
 
-.controller('NavigationCtrl', ['$scope', '$rootScope', '$http', '$location',
-  function($scope, $rootScope, $http, $location) {
-  var self = this
-
-  $rootScope.selectedTab = $location.path() || '/';
-
-  if ($rootScope.authenticated) {
-    $location.path('/');
-    $rootScope.selectedTab = '/';
-    return;
-  }
-  
-}]);
+/*
+ * .controller('NavigationCtrl', ['$scope', '$rootScope', '$http', '$location',
+ * function($scope, $rootScope, $http, $location) { var self = this
+ * 
+ * $rootScope.selectedTab = $location.path() || '/';
+ * 
+ * if ($rootScope.authenticated) { $location.path('/'); $rootScope.selectedTab =
+ * '/'; return; }
+ * 
+ * }]);
+ */
