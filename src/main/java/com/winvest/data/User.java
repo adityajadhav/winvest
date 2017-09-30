@@ -1,5 +1,8 @@
 package com.winvest.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +15,16 @@ public class User {
 	private String name;
 
 	private String address;
+
+	private List<Item> wishlist;
+
+	public List<Item> getWishlist() {
+		return wishlist;
+	}
+
+	public void setWishlist(List<Item> wishlist) {
+		this.wishlist = wishlist;
+	}
 
 	public String getId() {
 		return id;
