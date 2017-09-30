@@ -36,8 +36,19 @@ public class Application implements CommandLineRunner {
 		w2.setActualPrice(599);
 		w2.setName("Drone");
 		w2.setCoverPrice(300);
+		
+		Item w3 = new Item();
+		w3.setActualPrice(300);
+		w3.setName("GoPro");
+		w3.setCoverPrice(100);
+		
+		Item w4 = new Item();
+		w4.setActualPrice(2000);
+		w4.setName("Macbook Pro");
+		w4.setCoverPrice(300);
+		
 
-		u.setWishlist(Arrays.asList(w1, w2));
+		u.setWishlist(Arrays.asList(w1, w2, w3, w4));
 		userRepository.save(u);
 
 	}

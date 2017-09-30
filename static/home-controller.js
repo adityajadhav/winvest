@@ -9,7 +9,7 @@ myApp.controller('HomeCtrl', [
 				name : ""
 			} ];*/
 
-			$scope.title = 'WInvest!';
+			$scope.title = 'Winvest!';
 			$scope.subTitle = 'Next Generation Banking Portal';
 
 			$scope.labels = [ "Download Sales", "In-Store Sales",
