@@ -47,6 +47,10 @@ myApp.controller('HomeCtrl', [
 
 			};
 
+			$scope.displayDate = function(x) {
+				return x == "Wishlist Transaction";
+			}
+
 			this.callOnce();
 
 		}

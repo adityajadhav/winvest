@@ -31,15 +31,17 @@ public class TransactionController {
 		Transaction t1 = new Transaction();
 		t1.setCreatedDate(new Date());
 		t1.setBelongToUser("Aditya");
-		t1.setText("Debit Card Purchase Chipotle Mexican Grill");
-
+		t1.setText("Chipotle Mexican Grill");
 		Double amt = Double.parseDouble(amount);
 		t1.setAmount(amt);
+		t1.setWishlistAmount(addWishListTransaction(t1));
+
 		transactionRepository.save(t1);
-		addWishListTransaction(t1);
+		
+
 	}
 	
-	public void addWishListTransaction(Transaction t) {
+	public Double addWishListTransaction(Transaction t) {
 		Transaction t1 = new Transaction();
 		int roundOff = (int) Math.round(t.getAmount()) + 1;
 		double amountToBeAdded = roundOff - t.getAmount();
@@ -47,7 +49,8 @@ public class TransactionController {
 		t1.setCreatedDate(t.getCreatedDate());
 		t1.setText("Wishlist Transaction");
 		t1.setType("Wishlist");
-		transactionRepository.save(t1);
+		//transactionRepository.save(t1);
+		return amountToBeAdded;
 	}
 
 }

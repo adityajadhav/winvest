@@ -20,7 +20,17 @@ public class Transaction {
 	private Double amount;
 	
 	private String type;
+	
+	private Double wishlistAmount;
 
+
+	public Double getWishlistAmount() {
+		return wishlistAmount;
+	}
+
+	public void setWishlistAmount(Double wishlistAmount) {
+		this.wishlistAmount = wishlistAmount;
+	}
 
 	// TODO need to set dynamic
 	private String belongToUser = "Aditya";

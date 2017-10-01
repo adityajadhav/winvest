@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="panel panel-default">
-				<div class="panel-heading">Graph</div>
+				<div class="panel-heading">Monthly Expenses</div>
 				<div class="panel-body"
 					style="min-height: 300px; max-height: 300px; overflow-y: scroll;overflow-x: scroll;">
 
@@ -45,14 +45,48 @@
 		</div>
 		<div class="col-md-4">
 			<div class="panel panel-default">
-				<div class="panel-heading">Last 10 Transactions</div>
+				<div class="panel-heading">Recent Transactions</div>
 				<div class="panel-body"
-					style="min-height: 300px; max-height: 300px; overflow-y: scroll;">
+					style="min-height: 300px; max-height: 300px; overflow-y: scroll; overflow-x: scroll;">
 
-					<ul>
-						<li ng-repeat="transaction in transactions">
-							{{transaction.text}}</li>
-					</ul>
+					<div>
+					<div class="row" ng-repeat="transaction in transactions">
+					
+					<div class="col-md-3">
+					{{transaction.createdDate | date:"MMM dd"}}
+					
+					<br> </br>
+					
+					<hr>
+					
+					</div>
+					<div class="col-md-6">
+					{{transaction.text}}
+					
+					<p style="font-size: 12px">WishList Transaction: </p>
+					
+						<hr>
+					</div>
+					
+					<div class="col-md-3">
+					{{transaction.amount}}
+					
+					<p style="font-size: 12px; color:#4CAF50;">+ {{transaction.wishlistAmount | number:2}} </p>
+					
+										<hr>
+					
+					</div>
+					
+					
+					
+					</div>
+					
+					
+					</div>
+					<!-- <ul>
+						<li ng-repeat="transaction in transactions" style="list-style: none;margin-left: -40px;">
+							{{transaction.text}}<hr></li>
+					</ul> -->
 
 				</div>
 			</div>
