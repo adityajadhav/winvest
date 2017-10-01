@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,22 @@ public class TransactionController {
 		t1.setBelongToUser("Aditya");
 		t1.setText("Chipotle Mexican Grill");
 		Double amt = Double.parseDouble(amount);
+		t1.setAmount(amt);
+		t1.setWishlistAmount(addWishListTransaction(t1));
+
+		transactionRepository.save(t1);
+		
+
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value = "/update")
+	public final void pay(@RequestBody ResponseDAO responseDAO) {
+		System.out.println(responseDAO.getAmount());
+		Transaction t1 = new Transaction();
+		t1.setCreatedDate(new Date());
+		t1.setBelongToUser("Aditya");
+		t1.setText("Chipotle Mexican Grill");
+		Double amt = Double.parseDouble(responseDAO.getAmount());
 		t1.setAmount(amt);
 		t1.setWishlistAmount(addWishListTransaction(t1));
 
