@@ -31,27 +31,31 @@ public class Application implements CommandLineRunner {
 
 		userRepository.deleteAll();
 		User u = new User();
-		u.setName("Aditya");
+		u.setName("Aditya Jadhav");
 
 		Item w1 = new Item();
 		w1.setActualPrice(999);
 		w1.setName("iPhone");
 		w1.setCoverPrice(800);
+		w1.setPercentCovered((w1.getCoverPrice() * 100) / w1.getActualPrice());
 
 		Item w2 = new Item();
 		w2.setActualPrice(599);
 		w2.setName("Drone");
 		w2.setCoverPrice(300);
+		w2.setPercentCovered((w2.getCoverPrice() * 100) / w2.getActualPrice());
 
 		Item w3 = new Item();
 		w3.setActualPrice(300);
 		w3.setName("GoPro");
 		w3.setCoverPrice(100);
+		w3.setPercentCovered((w3.getCoverPrice() * 100) / w3.getActualPrice());
 
 		Item w4 = new Item();
 		w4.setActualPrice(2000);
 		w4.setName("Macbook Pro");
 		w4.setCoverPrice(300);
+		w4.setPercentCovered((w4.getCoverPrice() * 100) / w4.getActualPrice());
 
 		u.setWishlist(Arrays.asList(w1, w2, w3, w4));
 		userRepository.save(u);

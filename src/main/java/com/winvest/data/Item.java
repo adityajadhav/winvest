@@ -8,6 +8,16 @@ public class Item {
 
 	private double coverPrice;
 
+	private double percentCovered;
+
+	public double getPercentCovered() {
+		return percentCovered;
+	}
+
+	public void setPercentCovered(double percentCovered) {
+		this.percentCovered = percentCovered;
+	}
+
 	public String getName() {
 		return name;
 	}
