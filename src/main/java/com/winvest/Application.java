@@ -58,14 +58,34 @@ public class Application implements CommandLineRunner {
 
 		// transactions
 		transactionRepository.deleteAll();
-		
+
 		Transaction t1 = new Transaction();
 		t1.setCreatedDate(new Date());
 		t1.setBelongToUser("Aditya");
 		t1.setText("Debit Card Purchase VENTRA MOBILE");
-		t1.setAmount(30.0);
-		
-		transactionRepository.save(t1);
+		t1.setAmount(30.12);
 
+		Transaction t2 = new Transaction();
+		t2.setCreatedDate(new Date());
+		t2.setBelongToUser("Aditya");
+		t2.setText("Debit Card Purchase VENTRA MOBILE");
+		t2.setAmount(15.10);
+
+		transactionRepository.save(t1);
+		addWishListTransaction(t1);
+		transactionRepository.save(t2);
+		addWishListTransaction(t2);
+
+	}
+
+	public void addWishListTransaction(Transaction t) {
+		Transaction t1 = new Transaction();
+		int roundOff = (int) Math.round(t.getAmount()) + 1;
+		double amountToBeAdded = roundOff - t.getAmount();
+		t1.setAmount(amountToBeAdded);
+		t1.setCreatedDate(t.getCreatedDate());
+		t1.setText("Wishlist Transaction");
+		t1.setType("Wishlist");
+		transactionRepository.save(t1);
 	}
 }

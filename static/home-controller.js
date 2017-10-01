@@ -5,9 +5,9 @@ myApp.controller('HomeCtrl', [
 		'$resource',
 		function($scope, $resource) {
 
-			/*$scope.wishlist = [ {
-				name : ""
-			} ];*/
+			/*
+			 * $scope.wishlist = [ { name : "" } ];
+			 */
 
 			$scope.title = 'Winvest!';
 			$scope.subTitle = 'Next Generation Banking Portal';
@@ -17,13 +17,18 @@ myApp.controller('HomeCtrl', [
 			$scope.data = [ 300, 500, 100 ];
 
 			setInterval(function() {
-				
+
 				var User = $resource('/api/user');
 				var user = User.query(function() {
 					$scope.wishlist = user[0].wishlist;
 				});
 
-			}, 5000)
+				var Transaction = $resource('/api/transaction');
+				var transactions = Transaction.query(function() {
+					$scope.transactions = transactions;
+				});
+
+			}, 5000);
 
 		}
 
