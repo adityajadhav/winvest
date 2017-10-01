@@ -65,6 +65,17 @@ public class TransactionController {
 
 		transactionRepository.save(t1);
 		
+		
+		List<User> users = userRepository.findByName("Aditya Jadhav");
+		
+		
+		User user = userRepository.findOne(users.get(0).getId());
+		
+		user.setAmount(user.getAmount() -amt - addWishListTransaction(t1));
+		user.getWishlist().get(0).setCoverPrice(user.getWishlist().get(0).getCoverPrice() + addWishListTransaction(t1));
+		userRepository.save(user);
+
+		
 
 	}
 	
