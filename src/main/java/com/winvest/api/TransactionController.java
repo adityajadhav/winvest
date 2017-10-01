@@ -73,6 +73,8 @@ public class TransactionController {
 		
 		user.setAmount(user.getAmount() -amt - addWishListTransaction(t1));
 		user.getWishlist().get(0).setCoverPrice(user.getWishlist().get(0).getCoverPrice() + addWishListTransaction(t1));
+		user.getWishlist().get(0).setPercentCovered((user.getWishlist().get(0).getCoverPrice() * 100) / user.getWishlist().get(0).getActualPrice());
+
 		userRepository.save(user);
 
 		
