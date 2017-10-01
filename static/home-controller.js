@@ -28,10 +28,7 @@ myApp.controller('HomeCtrl', [
 				me.callOnce();
 			}, 5000);
 
-			var UserAditya = $resource('/api/user/aditya');
-			var userAditya = UserAditya.query(function() {
-				$scope.profile = userAditya[0];
-			});
+			
 
 			this.callOnce = function() {
 
@@ -43,6 +40,11 @@ myApp.controller('HomeCtrl', [
 				var Transaction = $resource('/api/transaction');
 				var transactions = Transaction.query(function() {
 					$scope.transactions = transactions;
+				});
+				
+				var UserAditya = $resource('/api/user/aditya');
+				var userAditya = UserAditya.query(function() {
+					$scope.profile = userAditya[0];
 				});
 
 			};

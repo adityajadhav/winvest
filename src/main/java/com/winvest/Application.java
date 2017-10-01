@@ -32,7 +32,8 @@ public class Application implements CommandLineRunner {
 		userRepository.deleteAll();
 		User u = new User();
 		u.setName("Aditya Jadhav");
-
+		u.setAmount(1256.70);
+		
 		Item w1 = new Item();
 		w1.setActualPrice(999);
 		w1.setName("iPhone");

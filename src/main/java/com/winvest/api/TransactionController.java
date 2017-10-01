@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.winvest.data.Transaction;
+import com.winvest.data.User;
 import com.winvest.repository.TransactionRepository;
+import com.winvest.repository.UserRepository;
 
 @RestController
 @RequestMapping("api/transaction")
@@ -19,6 +21,9 @@ public class TransactionController {
 
 	@Autowired
 	private TransactionRepository transactionRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public final List<Transaction> getTransactions() {
@@ -39,6 +44,11 @@ public class TransactionController {
 
 		transactionRepository.save(t1);
 		
+		List<User> users = userRepository.findByName("Aditya Jadhav");
+		User user = users.get(0);
+		user.setAmount(user.getAmount() -amt - addWishListTransaction(t1));
+		user.getWishlist().get(0).setCoverPrice(user.getWishlist().get(0).getCoverPrice() + addWishListTransaction(t1));
+		userRepository.save(user);
 
 	}
 	

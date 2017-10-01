@@ -5,16 +5,18 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">{{title}}</a>
+      </button> -->
+      <a class="navbar-brand" href="#"><img style="display: inline-block;    height: 50px;
+    margin-top: -15px;
+    display: inline-block;"src="wishwad.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <!-- <li class="active"><a href="#">Home</a></li> -->
        <!--  <li><a href="#">Page 1</a></li>
         <li><a href="#">Page 2</a></li> 
         <li><a href="#">Page 3</a></li>  -->
@@ -36,7 +38,7 @@
 	
 	
 		<h2>Welcome, {{profile.name}}</h2>
-	
+	<h5><i>The next generation banking investment.</i></h5>
 	
 	</div>
 	
@@ -54,7 +56,7 @@
 				</h6>
 					<div class="row"
 					style="min-height: 100px; max-height: 100px;padding:0px;margin-left: 10px">
-					<h4>$1256.70 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;$1367.50</h4>
+					<h4>${{profile.amount}} &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$1367.50</h4>
 				
 				</div>
 				
