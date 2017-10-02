@@ -73,7 +73,7 @@ public class Application implements CommandLineRunner {
 		Transaction t2 = new Transaction();
 		t2.setCreatedDate(new Date());
 		t2.setBelongToUser("Aditya");
-		t2.setText("VENTRA MOBILE");
+		t2.setText("Purdue Unv Parking");
 		t2.setAmount(15.10);
 		t1.setWishlistAmount(addWishListTransaction(t1));
 
