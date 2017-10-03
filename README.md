@@ -1,6 +1,5 @@
 # Winvest -> WishWad
-
-The next generation banking investment.
+The next generation banking investment
 
 # Inspiration
 We all want to save money, but how do we know the best way to save? This is a common question that lingers in almost everyone’s mind. At first, saving may seem like a daunting task: Remember, though, a journey of a thousand miles begins with a single step.
